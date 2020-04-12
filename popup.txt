@@ -1,34 +1,24 @@
-<apex:page controller="testEditOppController">
+<apex:page controller="PopupController">
     <apex:form >
         <apex:commandButton value="Show Pop up" action="{!showPopup}" rerender="popup"/>
-       
- 
         <apex:outputPanel id="popup">
-            <apex:outputPanel styleClass="customPopup" layout="block" rendered="{!displayPopUp}">
-                You have Deleted the Record Row <br/><br/>
+            <apex:outputPanel styleClass="popupStyle" layout="block" rendered="{!displayPopUp}">
+                This is Pop up Message <br/><br/>
                 <apex:commandButton value="x" action="{!closePopup}" style="margin-left:200px;margin-top:-35px;" rerender="popup"/>
             </apex:outputPanel>
-        </apex:outputPanel>
- 
-    </apex:form>
- 
+        </apex:outputPanel>        
+    </apex:form>   
     <style type="text/css">
-       .customPopup{
-            background-color: white;
-            border-style: solid;
-            border-width: 2px;
-            left: 50%;
-            padding:10px;
-            position: absolute;
-            z-index: 9999;
-            /* These are the 3 css properties you will need to tweak so the pop 
-            up displays in the center of the screen. First set the width. Then set 
-            margin-left to negative half of what the width is. You can also add 
-            the height property for a fixed size pop up.*/
-            width: 210px;
-            margin-left: -250px;
-            top:50px;
+        .popupStyle{
+        border-style: solid;
+        border-width: 2px;
+        left: 50%;
+        padding:10px;
+        position: absolute;
+        z-index: 9999;
+        width: 210px;
+        margin-left: -250px;
+        top:50px;
         }
     </style>
 </apex:page>
-
